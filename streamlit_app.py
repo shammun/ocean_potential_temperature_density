@@ -285,7 +285,15 @@ def app():
     # Display your picture
     st.image('ocean_wave_shorter.gif', use_column_width=True)
     
-    
+    # Inject custom CSS to style file uploader
+    st.markdown("""
+    <style>
+        .stFileUploader > div > label {
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
     uploaded_file = st.file_uploader("Choose a CSV file with at least three column names: 'temperature', 'salinity', and 'pressure'")
 
