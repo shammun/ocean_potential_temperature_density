@@ -2,26 +2,20 @@ aiofiles==23.2.1
 altair==5.1.1
 annotated-types==0.5.0
 anyio==3.7.1
-asttokens @ file:///opt/conda/conda-bld/asttokens_1646925590279/work
-attrs @ file:///C:/b/abs_35n0jusce8/croot/attrs_1695717880170/work
-backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
+asttokens==2.0.5
+attrs==23.1.0
 blinker==1.6.2
-Bottleneck @ file:///C:/ci_311/bottleneck_1676500016583/work
-brotlipy==0.7.0
 cachetools==5.3.1
-certifi @ file:///C:/b/abs_36eb5mzhph/croot/certifi_1690232276943/work/certifi
-cffi @ file:///C:/ci_311/cffi_1676423759166/work
+Cartopy==0.22.0
+certifi==2023.7.22
+cftime==1.5.2
 charset-normalizer==3.2.0
-click==8.1.7
-colorama @ file:///C:/ci_311/colorama_1676422310965/work
-comm @ file:///C:/ci_311/comm_1678376562840/work
+click==8.0.3
+colorama==0.4.4
 contourpy==1.1.1
-cryptography @ file:///C:/b/abs_f4do8t8jfs/croot/cryptography_1694444424531/work
 cycler==0.11.0
-debugpy @ file:///C:/b/abs_c0y1fjipt2/croot/debugpy_1690906864587/work
-decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
 exceptiongroup==1.1.3
-executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
+executing==0.8.2
 fastapi==0.103.1
 ffmpy==0.3.1
 filelock==3.12.4
@@ -35,88 +29,72 @@ h11==0.14.0
 httpcore==0.18.0
 httpx==0.25.0
 huggingface-hub==0.17.3
-idna @ file:///C:/ci_311/idna_1676424932545/work
+idna==3.4
 importlib-metadata==6.8.0
 importlib-resources==6.1.0
-ipykernel @ file:///C:/b/abs_07rkft_vaz/croot/ipykernel_1691121700587/work
-ipython @ file:///C:/b/abs_e5729i179y/croot/ipython_1694181400005/work
-ipywidgets @ file:///C:/b/abs_5awapknmz_/croot/ipywidgets_1679394824767/work
-jedi==0.19.0
 Jinja2==3.1.2
 jsonschema==4.19.1
 jsonschema-specifications==2023.7.1
-jupyter_client @ file:///C:/b/abs_059idvdagk/croot/jupyter_client_1680171872444/work
-jupyter_core==5.3.2
-jupyterlab-widgets @ file:///C:/b/abs_38ad427jkz/croot/jupyterlab_widgets_1679055289211/work
 kiwisolver==1.4.5
 markdown-it-py==3.0.0
 MarkupSafe==2.1.3
 matplotlib==3.8.0
-matplotlib-inline @ file:///C:/ci_311/matplotlib-inline_1676425798036/work
 mdurl==0.1.2
-mkl-fft @ file:///C:/b/abs_19i1y8ykas/croot/mkl_fft_1695058226480/work
-mkl-random @ file:///C:/b/abs_edwkj1_o69/croot/mkl_random_1695059866750/work
-mkl-service==2.4.0
-nest-asyncio @ file:///C:/ci_311/nest-asyncio_1676423519896/work
-numexpr @ file:///C:/b/abs_afm0oewmmt/croot/numexpr_1683221839116/work
+mypy-extensions==0.4.3
+netCDF4==1.5.8
 numpy==1.26.0
 orjson==3.9.7
-packaging @ file:///C:/b/abs_28t5mcoltc/croot/packaging_1693575224052/work
+packaging==23.1
 pandas==2.1.1
-parso @ file:///opt/conda/conda-bld/parso_1641458642106/work
-pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
+parso==0.8.3
+pathspec==0.9.0
+patool==1.12
 Pillow==9.5.0
-platformdirs @ file:///C:/b/abs_b6z_yqw_ii/croot/platformdirs_1692205479426/work
-prompt-toolkit @ file:///C:/ci_311/prompt-toolkit_1676425940920/work
+platformdirs==2.4.1
 protobuf==4.24.3
-psutil @ file:///C:/ci_311_rebuilds/psutil_1679005906571/work
-pure-eval @ file:///opt/conda/conda-bld/pure_eval_1646925070566/work
+psycopg2-binary==2.9.8
+pure-eval==0.2.1
 pyarrow==13.0.0
-pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
 pydantic==2.4.1
 pydantic_core==2.10.1
 pydeck==0.8.1b0
 pydub==0.25.1
 Pygments==2.16.1
-Pympler @ file:///tmp/build/80754af9/pympler_1602785470644/work
-pyOpenSSL @ file:///C:/b/abs_08f38zyck4/croot/pyopenssl_1690225407403/work
 pyparsing==3.1.1
-pyrsistent @ file:///C:/ci_311/pyrsistent_1676422695500/work
-PySocks @ file:///C:/ci_311/pysocks_1676425991111/work
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pyproj==3.6.1
+pyshp==2.3.1
+python-dateutil==2.8.2
 python-multipart==0.0.6
-pytz @ file:///C:/b/abs_19q3ljkez4/croot/pytz_1695131651401/work
-pytz-deprecation-shim==0.1.0.post0
-pywin32==305.1
+pytz==2021.3
 PyYAML==6.0.1
-pyzmq @ file:///C:/b/abs_655zk4a3s8/croot/pyzmq_1686601465034/work
 referencing==0.30.2
-requests @ file:///C:/b/abs_316c2inijk/croot/requests_1690400295842/work
+requests==2.31.0
 rich==13.5.3
 rpds-py==0.10.3
 seaborn==0.13.0
 semantic-version==2.10.0
-six @ file:///tmp/build/80754af9/six_1644875935023/work
+shapely==2.0.1
+six==1.16.0
 smmap==5.0.1
 sniffio==1.3.0
-stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
+stack-data==0.1.4
 starlette==0.27.0
-streamlit==1.27.1
+streamlit==1.27.0
 tenacity==8.2.3
-toml @ file:///tmp/build/80754af9/toml_1616166611790/work
-toolz @ file:///C:/ci_311/toolz_1676431406517/work
+toml==0.10.2
+tomli==1.2.3
+toolz==0.12.0
 tornado==6.3.3
 tqdm==4.66.1
-traitlets @ file:///C:/ci_311/traitlets_1676423290727/work
+traitlets==5.1.1
 typing_extensions==4.8.0
-tzdata @ file:///croot/python-tzdata_1690578112552/work
-tzlocal==4.3.1
+tzdata==2023.3
+tzlocal==5.0.1
 urllib3==2.0.5
 uvicorn==0.23.2
 validators==0.22.0
 watchdog==3.0.0
-wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
+wcwidth==0.2.5
 websockets==11.0.3
-widgetsnbextension @ file:///C:/b/abs_882k4_4kdf/croot/widgetsnbextension_1679313880295/work
-win-inet-pton @ file:///C:/ci_311/win_inet_pton_1676425458225/work
+xarray==2023.9.0
 zipp==3.17.0
