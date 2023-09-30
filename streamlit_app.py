@@ -278,10 +278,11 @@ def app():
     # Embed a local audio file
     audio_file = 'ocean-waves.mp3'  # Replace with the path to your local audio file
 
-    st.audio(audio_file, format='audio/mp3', start_time=0)
-
-    # Embed audio with autoplay and loop using raw HTML
-    st.markdown(f'<audio src="{audio_file}" autoplay loop></audio>', unsafe_allow_html=True)
+    # Embed audio with autoplay, loop, and hidden attributes using raw HTML
+    st.markdown(
+        f'<audio src="{audio_file}" autoplay loop hidden></audio>', 
+        unsafe_allow_html=True
+    )
 
     st.title("Seawater Potential Temperature, Density, Potential Density, Density Anomaly, and Static Stability Calculator")
 
