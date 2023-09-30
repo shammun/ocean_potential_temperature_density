@@ -304,7 +304,8 @@ def app():
         try:
             result_df = all_values_in_one_table(df)
             
-            st.write("Please find a new table below with the newly calculated columns of potential temperature, density, sigma-t, potential Density and E")
+            st.markdown("<span style='color: blue; font-size: 20px'>Please find a new table below with the newly calculated columns of potential temperature, density, sigma-t, potential Density and E</span>", unsafe_allow_html=True)
+            # st.write("Please find a new table below with the newly calculated columns of potential temperature, density, sigma-t, potential Density and E")
             # Display DataFrames using Streamlit
             st.write(result_df)
 
@@ -318,7 +319,8 @@ def app():
             )
             
             # Plotting intermediate and final plots
-            st.write("Plot of Temperature, Potential Temperature, Salinity, Sigma-t and Potential Density against Depth in one plot")
+            st.markdown("<span style='color: blue; font-size: 20px'>Plot of Temperature, Potential Temperature, Salinity, Sigma-t and Potential Density against Depth in one plot</span>", unsafe_allow_html=True)
+            #st.write("Plot of Temperature, Potential Temperature, Salinity, Sigma-t and Potential Density against Depth in one plot")
             intermediate_plot(result_df)
             st.pyplot(plt.gcf())  # Display the current figure
 
