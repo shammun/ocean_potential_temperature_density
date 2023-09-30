@@ -304,7 +304,7 @@ def app():
         try:
             result_df = all_values_in_one_table(df)
             
-            st.markdown("<span style='color: blue; font-size: 20px'>Please find a new table below with the newly calculated columns of potential temperature, density, sigma-t, potential Density and E</span>", unsafe_allow_html=True)
+            st.markdown("<span style='color: blue; font-size: 20px'>Please find a new table below with the newly calculated columns of potential temperature, density, sigma-t, potential density and E</span>", unsafe_allow_html=True)
             # st.write("Please find a new table below with the newly calculated columns of potential temperature, density, sigma-t, potential Density and E")
             # Display DataFrames using Streamlit
             st.write(result_df)
