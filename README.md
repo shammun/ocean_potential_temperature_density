@@ -22,10 +22,10 @@ This app can calculate Seawater Potential Temperature, Density, Potential Densit
    git clone https://github.com/shammun/ocean_potential_temperature_density
    ```
 
-2. Navigate to the project directory:
+2. Navigate to the downloaded repo:
 
    ```
-   cd clim_680_hw
+   cd ocean_potential_temperature_density
    ```
 
 3. Create a virtual environment
