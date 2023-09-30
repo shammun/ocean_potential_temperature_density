@@ -52,7 +52,7 @@ patool==1.12
 Pillow==9.5.0
 platformdirs==2.4.1
 protobuf==4.24.3
-psycopg2==2.9.3
+psycopg2==2.9.8
 pure-eval==0.2.1
 pyarrow==13.0.0
 pydantic==2.4.1
