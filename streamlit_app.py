@@ -304,6 +304,7 @@ def app():
         try:
             result_df = all_values_in_one_table(df)
             
+            st.write("Please find a new table below with the newly calculated columns of potential temperature, density, sigma-t, potential Density and E")
             # Display DataFrames using Streamlit
             st.write(result_df)
 
