@@ -280,7 +280,7 @@ def app():
     st.write("Shammunul Islam")
     
     # Display your picture
-    st.image("me_fb.jpg", width=200)  # Adjust the width as needed
+    st.image('ocean_wave_shorter.gif', use_column_width=True)
     
     # Display your LinkedIn profile as a clickable link
     st.markdown("[LinkedIn Profile](https://www.linkedin.com/in/shammunul/)")
