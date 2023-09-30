@@ -275,15 +275,6 @@ def all_values_in_one_table(df):
 
 def app():
 
-    # Embed a local audio file
-    audio_file = 'ocean-waves.mp3'  # Replace with the path to your local audio file
-
-    # Embed audio with autoplay, loop, and hidden attributes using raw HTML
-    st.markdown(
-        f'<audio src="{audio_file}" autoplay loop hidden></audio>', 
-        unsafe_allow_html=True
-    )
-
     st.title("Seawater Potential Temperature, Density, Potential Density, Density Anomaly, and Static Stability Calculator")
 
     # Display your name
@@ -294,6 +285,17 @@ def app():
     
     # Display your picture
     st.image('ocean_wave_shorter.gif', use_column_width=True)
+
+    st.write("\n")
+    st.write("Play me to hear the soothing ocean wave sound")
+    # Embed a local audio file
+    audio_file = 'ocean-wave.mp3'  # Replace with the path to your local audio file
+
+
+    st.audio(audio_file, format='audio/mp3', start_time=0)
+
+    # Embed audio with autoplay and loop using raw HTML
+    st.markdown(f'<audio src="{audio_file}" autoplay loop></audio>', unsafe_allow_html=True)
     
     # Inject custom CSS to style file uploader
     st.markdown("""
