@@ -70,8 +70,8 @@ Below is a step-by-step video on using this app.
 
 Below is a screenshot of the first single plot.
 
-![Screenshot3](image1.png)
+![Screenshot3](image2.png)
 
 Below is a screenshot of the second multiple plots.
 
-![Screenshot3](image2.png)
+![Screenshot3](image1.png)
