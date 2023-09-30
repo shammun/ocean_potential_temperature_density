@@ -319,12 +319,12 @@ def app():
             )
             
             # Plotting intermediate and final plots
-            st.markdown("<span style='color: blue; font-size: 20px'>Plot of Temperature, Potential Temperature, Salinity, Sigma-t and Potential Density against Depth in one plot</span>", unsafe_allow_html=True)
+            st.markdown("<span style='color: blue; font-size: 20px'>Plot of temperature, potential temperature, salinity, sigma-t and potential density against depth in one plot</span>", unsafe_allow_html=True)
             #st.write("Plot of Temperature, Potential Temperature, Salinity, Sigma-t and Potential Density against Depth in one plot")
             intermediate_plot(result_df)
             st.pyplot(plt.gcf())  # Display the current figure
 
-            st.markdown("<span style='color: blue; font-size: 20px'>Plot of Temperature, Potential Temperature, Salinity, Density, Sigma-t, Potential Density and E against Depth in separate plots</span>", unsafe_allow_html=True)
+            st.markdown("<span style='color: blue; font-size: 20px'>Plot of temperature, potential temperature, salinity, density, sigma-t, potential density and E against depth in separate plots</span>", unsafe_allow_html=True)
             # st.write("Plot of Temperature, Potential Temperature, Salinity, Density, Sigma-t, Potential Density and E against Depth in separate plots")
             final_plot(result_df)
             st.pyplot(plt.gcf())  # Display the current figure
