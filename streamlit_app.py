@@ -312,7 +312,7 @@ def app():
             # Download button
             csv = result_df.to_csv(index=False)
             st.download_button(
-                label="Download the data as CSV file",
+                label="Download the data as a CSV file",
                 data=csv,
                 file_name="processed_data.csv",
                 mime="text/csv",
