@@ -1,4 +1,4 @@
-### An app to calculate Seawater Potential Temperature, Density, Potential Density, Density Anomaly, and Static Stability from salinity, temperature and pressure only
+### A Streamlit app to calculate Seawater Potential Temperature, Density, Potential Density, Density Anomaly, and Static Stability from salinity, temperature and pressure only
 
 **Shammunul Islam (sislam27@mason.edu)**
 
