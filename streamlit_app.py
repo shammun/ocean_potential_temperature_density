@@ -278,12 +278,14 @@ def app():
 
     # Display your name
     st.write("Shammunul Islam")
+
+    # Display your LinkedIn profile as a clickable link
+    st.markdown("[LinkedIn Profile](https://www.linkedin.com/in/shammunul/)")
     
     # Display your picture
     st.image('ocean_wave_shorter.gif', use_column_width=True)
     
-    # Display your LinkedIn profile as a clickable link
-    st.markdown("[LinkedIn Profile](https://www.linkedin.com/in/shammunul/)")
+    
 
     uploaded_file = st.file_uploader("Choose a CSV file with at least three column names: 'temperature', 'salinity', and 'pressure'")
 
