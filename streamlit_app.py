@@ -286,8 +286,6 @@ def app():
     # Display your picture
     st.image('ocean_wave_shorter.gif', use_column_width=True)
 
-    # Embed audio with autoplay and loop using raw HTML
-    st.markdown(f'<audio src="{audio_file}" autoplay loop></audio>', unsafe_allow_html=True)
     
     # Inject custom CSS to style file uploader
     st.markdown("""
