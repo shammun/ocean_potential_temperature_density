@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import numpy as np 
 import math
+import seaborn as sns
 
 # (Your functions: density0, density, adiabatic_lapse_rate, etc... remain unchanged)
 
@@ -129,102 +130,140 @@ def compute_potential_density_and_E_from_df(df): # here T means potential Temper
 
 
 def intermediate_plot(df):
+    # Set Seaborn style for more appealing visuals
+    sns.set_style("whitegrid", {'grid.linestyle': '--'})
+
+    # Increase the size of all labels and titles
+    plt.rcParams['axes.labelsize'] = 14
+    plt.rcParams['xtick.labelsize'] = 12
+    plt.rcParams['ytick.labelsize'] = 12
     
+    # Create the plot with increased height
+    fig, ax1 = plt.subplots(figsize=(10, 11))
 
-    # Create the plot
-    fig, ax1 = plt.subplots()
+    # Plot Temperature on x-axis with enhanced visuals
+    color = sns.color_palette("colorblind")[0]
+    ax1.set_xlabel('Temperature (°C)', color=color, weight='bold')
+    ax1.plot(df['temperature'], df['pressure'], color=color, linewidth=3)
+    ax1.tick_params(axis='x', labelcolor=color)
+    ax1.invert_yaxis()  # Invert y axis so depth increases downwards
+    
+    # Enhanced Potential Temperature plot
+    color = sns.color_palette("colorblind")[1]
+    ax2 = ax1.twiny()
+    ax2.xaxis.tick_bottom()
+    ax2.xaxis.set_label_position('bottom') 
+    ax2.spines['bottom'].set_position(('outward', 60))
+    ax2.set_xlabel('Potential Temperature (°C)', color=color, weight='bold')
+    ax2.plot(df['potential_temperature'], df['pressure'], color=color, linewidth=3)
+    ax2.tick_params(axis='x', labelcolor=color, direction='out', which='both')
+    
+    # Enhanced Salinity plot
+    color = sns.color_palette("colorblind")[2]
+    ax3 = ax1.twiny()
+    ax3.spines['top'].set_position(('outward', 0))
+    ax3.set_xlabel('Salinity (psu)', color=color, weight='bold')
+    ax3.plot(df['salinity'], df['pressure'], color=color, linewidth=3)
+    ax3.tick_params(axis='x', labelcolor=color)
 
+    # Enhanced Density plot
+    color = sns.color_palette("colorblind")[3]
+    ax4 = ax1.twiny()
+    ax4.spines['top'].set_position(('outward', 60))
+    ax4.set_xlabel('Sigma-t (kg/m³)', color=color, weight='bold')
+    ax4.plot(df['density_anomaly'], df['pressure'], color=color, linestyle='--', linewidth=3.5)
+    ax4.tick_params(axis='x', labelcolor=color)
+    
+    # Enhanced Potential Density plot
+    color = sns.color_palette("colorblind")[7]
+    ax5 = ax1.twiny()
+    ax5.spines['top'].set_position(('outward', 120))
+    ax5.set_xlabel('Potential density (kg/m³)', color=color, weight='bold')
+    ax5.plot(df['potential_density'], df['pressure'], color=color, linewidth=3)
+    ax5.tick_params(axis='x', labelcolor=color)
 
-    # Plot Salinity
-    color = 'tab:red'
-    ax1.set_xlabel('Depth (m)')
-    ax1.set_ylabel('Salinity (psu)', color=color)
-    ax1.plot(df['pressure'], df['salinity'], color=color, label='Salinity')
-    ax1.tick_params(axis='y', labelcolor=color)
-
-    # Plot Temperature
-    color = 'tab:blue'
-    ax2 = ax1.twinx()
-    ax2.set_ylabel('Temperature (°C)', color=color)
-    ax2.plot(df['pressure'], df['temperature'], color=color, label='Temperature')
-    ax2.tick_params(axis='y', labelcolor=color)
-
-    # Plot Density
-    color = 'tab:green'
-    ax3 = ax1.twinx()
-    ax3.spines['right'].set_position(('outward', 60))
-    ax3.set_ylabel('Density (kg/m³)', color=color)
-    ax3.plot(df['pressure'], df['density'], color=color, label='Density')
-    ax3.tick_params(axis='y', labelcolor=color)
-
-    # Plot Potential Temperature
-    color = 'tab:purple'
-    ax4 = ax1.twinx()
-    ax4.spines['right'].set_position(('outward', 120))
-    ax4.set_ylabel('Potential Temperature (°C)', color=color)
-    ax4.plot(df['pressure'], df['potential_temperature'], color=color, label='Potential Temp')
-    ax4.tick_params(axis='y', labelcolor=color)
-
-    # Add grid and title
-    ax1.grid(True)
-    plt.title('Profiles of Salinity, Temperature, Density and Potential Temperature with Depth')
-
-    # Show the plot
+    # Grid and title setup
+    ax1.grid(True, which='both', linestyle='--', linewidth=1)
+    plt.title('Profiles of Temperature, Potential Temperature, Salinity, Sigma-t and Potential Density against Depth', y=1.4, fontsize=18, fontweight='bold')
+    
+    # Display the enhanced plot
+    plt.tight_layout()
     plt.show()
+
     
 def final_plot(df):
     depth = df['pressure']
-    Depth = depth
     T = df['temperature']
     S = df['salinity']
     Potential_temperature = df['potential_temperature']
     Sigma_tee = df['density_anomaly']
     potential_density = df['potential_density']
-    E = df['E']
     density = df['density']
+    E = df["E"]
+
+    # Set global font size and style for all plots
+    plt.rcParams['axes.labelsize'] = 16  # Increase label font size
+    plt.rcParams['axes.labelweight'] = 'bold'
+    plt.rcParams['xtick.labelsize'] = 20
+    plt.rcParams['ytick.labelsize'] = 22
+    plt.rcParams['legend.fontsize'] = 18
+
+    # Plotting: 2 rows and 4 columns
+    fig, axs = plt.subplots(2, 4, figsize=(20, 15))
+
+    # Plot Temperature
+    # For the first plot
+    axs[0, 0].plot(T, -depth, label='Temperature', color='b', linewidth=2.5)
+    axs[0, 0].set_xlabel('Temperature')
+    axs[0, 0].set_ylabel('Depth (m)')
+    axs[0, 0].legend()
+    
+    # For the first plot
+    #handles, labels = axs[0, 0].get_legend_handles_labels()
+    #labels[0] = r'$\mathbf{Temperature}$'  # Using a bold LaTeX font here
+    #axs[0, 0].legend(handles, labels, fontsize=18)  # Set the fontsize to your desired size
 
 
-    # Plotting
-    fig, axs = plt.subplots(1, 5, figsize=(25, 10))
+    # Plot Potential Temperature
+    axs[0, 1].plot(Potential_temperature, -depth, label='Potential temperature', color='r', linewidth=2.5)
+    axs[0, 1].set_xlabel('Potential Temperature')
+    axs[0, 1].legend()
 
-    # Plot T and Potential Temperature
-    axs[0].plot(T, -depth, label='T')
-    axs[0].plot(Potential_temperature, -depth, label='Potential temperature')
-    axs[0].set_xlabel('Temperature')
-    axs[0].set_ylabel('Depth (m)')
-    axs[0].legend()
-    # axs[0].set_xticks(axs[0].get_xticks()[::4])  # Reduce the number of ticks, using every other tick
-    # axs[0].tick_params(axis='x', rotation=45)
+    # Plot Salinity
+    axs[0, 2].plot(S, -depth, label='Salinity', color='g', linewidth=2.5)
+    axs[0, 2].set_xlabel('Salinity')
+    axs[0, 2].legend()
 
+    # Plot Density
+    axs[0, 3].plot(density, -depth, label='Density', color='purple', linewidth=2.5)
+    axs[0, 3].set_xlabel('Density')
+    axs[0, 3].legend()
 
-    # Plot S
-    axs[1].plot(S, -Depth, label='S')
-    axs[1].set_xlabel('Salinity')
-    # axs[1].set_ylabel('Depth (m)')
-    axs[1].legend()
+    # Plot Density Anomaly
+    axs[1, 0].plot(Sigma_tee, -depth, label='Sigma-t', color='cyan', linewidth=2.5)
+    axs[1, 0].set_xlabel('Density Anomaly')
+    axs[1, 0].set_ylabel('Depth (m)')
+    axs[1, 0].legend()
 
-    # Plot Sigma_tee and Potential Density
-    axs[2].plot(Sigma_tee, -Depth, label='Sigma-t')
-    axs[2].plot(potential_density, -Depth, label='Potential Pensity')
-    axs[2].set_xlabel('Kg/m**3')
-    # axs[2].set_ylabel('Depth (m)')
-    axs[2].legend()
+    # Plot Potential Density
+    axs[1, 1].plot(potential_density, -depth, label='Potential Density', color='orange', linewidth=2.5)
+    axs[1, 1].set_xlabel('Potential Density')
+    axs[1, 1].legend()
+    
+    # Plot static stability
+    axs[1, 2].plot(E, -depth, label='E', color='black', linewidth=2.5)
+    axs[1, 2].set_xlabel('Static Stability')
+    axs[1, 2].legend()
+    
+    # Turn off the axis for the empty subplot
+    axs[1, 3].axis('off')
 
-
-    # Plot density
-    axs[3].plot(density, -Depth, label='Density')
-    axs[3].set_xlabel('Density')
-    # axs[3].set_ylabel('Depth (m)')
-    axs[3].legend()
-
-    # Plot E
-    axs[4].plot(E, -Depth,label='E')
-    axs[4].set_xlabel('E')
-    # axs[4].set_ylabel('Depth (m)')
-    axs[4].legend()
-
-
+    # Add title
+    fig.suptitle("Profiles of Temperature, Potential Temperature, Salinity, Density, Sigma-t, Potential Density and E against Depth", fontsize=24, fontweight='bold', y=1.08)
+    
+    plt.tight_layout()
     plt.show()
+
 
 def all_values_in_one_table(df):
     new_data = compute_density_from_df(df)
@@ -235,9 +274,18 @@ def all_values_in_one_table(df):
 
 
 def app():
-    st.title("Seawater Density Calculator")
+    st.title("Seawater Potential Temperature, Density, Potential Density, Density Anomaly, and Static Stability Calculator")
 
-    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+    # Display your name
+    st.write("Shammunul Islam")
+    
+    # Display your picture
+    st.image("me_fb.jpg", width=200)  # Adjust the width as needed
+    
+    # Display your LinkedIn profile as a clickable link
+    st.markdown("[LinkedIn Profile](https://www.linkedin.com/in/shammunul/)")
+
+    uploaded_file = st.file_uploader("Choose a CSV file with at least three column names: 'temperature', 'salinity', and 'pressure'", type="csv")
     
     if uploaded_file is not None:
         # Read the CSV data
@@ -255,12 +303,21 @@ def app():
             # Display DataFrames using Streamlit
             st.write(result_df)
 
+            # Download button
+            csv = result_df.to_csv(index=False)
+            st.download_button(
+                label="Download the data as CSV file",
+                data=csv,
+                file_name="processed_data.csv",
+                mime="text/csv",
+            )
+            
             # Plotting intermediate and final plots
-            st.write("Intermediate Plot:")
+            st.write("Plot of Temperature, Potential Temperature, Salinity, Sigma-t and Potential Density against Depth in one plot")
             intermediate_plot(result_df)
             st.pyplot(plt.gcf())  # Display the current figure
 
-            st.write("Final Plot:")
+            st.write("Plot of Temperature, Potential Temperature, Salinity, Density, Sigma-t, Potential Density and E against Depth in separate plots")
             final_plot(result_df)
             st.pyplot(plt.gcf())  # Display the current figure
 
