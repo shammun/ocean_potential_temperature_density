@@ -71,6 +71,7 @@ referencing==0.30.2
 requests==2.31.0
 rich==13.5.3
 rpds-py==0.10.3
+seaborn==0.13.0
 semantic-version==2.10.0
 shapely==2.0.1
 six==1.16.0
