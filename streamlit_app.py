@@ -297,7 +297,7 @@ def app():
     </style>
     """, unsafe_allow_html=True)
 
-    uploaded_file = st.file_uploader("Choose a CSV file with at least three column names: 'temperature', 'salinity', and 'pressure'")
+    uploaded_file = st.file_uploader("Choose a CSV file with at least three column names: 'temperature', 'salinity', and 'pressure' adn their corresponding values in the rows below:")
 
     # uploaded_file = st.file_uploader("Choose a CSV file with at least three column names: 'temperature', 'salinity', and 'pressure'", type="csv")
     
