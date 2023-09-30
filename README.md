@@ -13,7 +13,7 @@
 
 ## Introduction 
 
-This app can calculate Seawater Potential Temperature, Density, Potential Density, Density Anomaly, and Static Stability if you upload a csv file with three columns "salinity", "temperature", and "pressure". It also plots some of them first in a single plot and second, in a multiple plot.
+This app can calculate seawater potential temperature, density, potential density, density anomaly (sigma-tee), and static stability if you upload a csv file with three columns "salinity", "temperature", and "pressure". It also plots some of them in a single plot and some in a multiple plot.
 
 
 ## Installation
