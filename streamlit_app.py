@@ -324,7 +324,8 @@ def app():
             intermediate_plot(result_df)
             st.pyplot(plt.gcf())  # Display the current figure
 
-            st.write("Plot of Temperature, Potential Temperature, Salinity, Density, Sigma-t, Potential Density and E against Depth in separate plots")
+            st.markdown("<span style='color: blue; font-size: 20px'>Plot of Temperature, Potential Temperature, Salinity, Density, Sigma-t, Potential Density and E against Depth in separate plots</span>", unsafe_allow_html=True)
+            # st.write("Plot of Temperature, Potential Temperature, Salinity, Density, Sigma-t, Potential Density and E against Depth in separate plots")
             final_plot(result_df)
             st.pyplot(plt.gcf())  # Display the current figure
 
