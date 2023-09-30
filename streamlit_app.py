@@ -285,7 +285,9 @@ def app():
     # Display your LinkedIn profile as a clickable link
     st.markdown("[LinkedIn Profile](https://www.linkedin.com/in/shammunul/)")
 
-    uploaded_file = st.file_uploader("Choose a CSV file with at least three column names: 'temperature', 'salinity', and 'pressure'", type="csv")
+    uploaded_file = st.file_uploader("Choose a CSV file with at least three column names: 'temperature', 'salinity', and 'pressure'")
+
+    # uploaded_file = st.file_uploader("Choose a CSV file with at least three column names: 'temperature', 'salinity', and 'pressure'", type="csv")
     
     if uploaded_file is not None:
         # Read the CSV data
