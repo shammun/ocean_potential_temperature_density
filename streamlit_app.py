@@ -275,15 +275,6 @@ def all_values_in_one_table(df):
 
 def app():
 
-    # Set the background color
-    st.set_page_config(
-        page_title="Ocean App",
-        page_icon=":bar_chart:",
-        layout="wide",
-        initial_sidebar_state="expanded",
-        bg_color="lightblue"  # Set your desired background color here
-    )
-
     st.title("Seawater Potential Temperature, Density, Potential Density, Density Anomaly, and Static Stability Calculator")
 
     # Display your name
