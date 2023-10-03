@@ -213,7 +213,7 @@ def final_plot(df):
 
     # Plot Temperature
     # For the first plot
-    axs[0, 0].plot(T, -depth, label='Temperature', color='b', linewidth=2.5)
+    axs[0, 0].plot(T, depth, label='Temperature', color='b', linewidth=2.5)
     axs[0, 0].set_xlabel('Temperature')
     axs[0, 0].set_ylabel('Depth (m)')
     axs[0, 0].legend()
@@ -225,33 +225,33 @@ def final_plot(df):
 
 
     # Plot Potential Temperature
-    axs[0, 1].plot(Potential_temperature, -depth, label='Potential temperature', color='r', linewidth=2.5)
+    axs[0, 1].plot(Potential_temperature, depth, label='Potential temperature', color='r', linewidth=2.5)
     axs[0, 1].set_xlabel('Potential Temperature')
     axs[0, 1].legend()
 
     # Plot Salinity
-    axs[0, 2].plot(S, -depth, label='Salinity', color='g', linewidth=2.5)
+    axs[0, 2].plot(S, depth, label='Salinity', color='g', linewidth=2.5)
     axs[0, 2].set_xlabel('Salinity')
     axs[0, 2].legend()
 
     # Plot Density
-    axs[0, 3].plot(density, -depth, label='Density', color='purple', linewidth=2.5)
+    axs[0, 3].plot(density, depth, label='Density', color='purple', linewidth=2.5)
     axs[0, 3].set_xlabel('Density')
     axs[0, 3].legend()
 
     # Plot Density Anomaly
-    axs[1, 0].plot(Sigma_tee, -depth, label='Sigma-t', color='cyan', linewidth=2.5)
+    axs[1, 0].plot(Sigma_tee, depth, label='Sigma-t', color='cyan', linewidth=2.5)
     axs[1, 0].set_xlabel('Density Anomaly')
     axs[1, 0].set_ylabel('Depth (m)')
     axs[1, 0].legend()
 
     # Plot Potential Density
-    axs[1, 1].plot(potential_density, -depth, label='Potential Density', color='orange', linewidth=2.5)
+    axs[1, 1].plot(potential_density, depth, label='Potential Density', color='orange', linewidth=2.5)
     axs[1, 1].set_xlabel('Potential Density')
     axs[1, 1].legend()
     
     # Plot static stability
-    axs[1, 2].plot(E, -depth, label='E', color='black', linewidth=2.5)
+    axs[1, 2].plot(E, depth, label='E', color='black', linewidth=2.5)
     axs[1, 2].set_xlabel('Static Stability')
     axs[1, 2].legend()
     
